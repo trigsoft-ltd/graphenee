@@ -3,79 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.graphenee</groupId>
-	<artifactId>blockchain</artifactId>
+	<artifactId>graphenee</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<name>Graphenee Blockchain</name>
+	<name>Graphenee</name>
 	
-	<properties>
-		<sawtooth.version>v0.1.2</sawtooth.version>
-	</properties>
-	
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>io.graphenee</groupId>
-				<artifactId>core</artifactId>
-				<version>1.0.0-SNAPSHOT</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.hyperledger.sawtooth</groupId>
-			<artifactId>sawtooth-sdk-transaction-processor</artifactId>
-			<version>${sawtooth.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hyperledger.sawtooth</groupId>
-			<artifactId>sawtooth-sdk-signing</artifactId>
-			<version>${sawtooth.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hyperledger.sawtooth</groupId>
-			<artifactId>sawtooth-sdk-protos</artifactId>
-			<version>${sawtooth.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.squareup.retrofit2</groupId>
-			<artifactId>retrofit</artifactId>
-			<version>2.5.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.squareup.retrofit2</groupId>
-			<artifactId>converter-gson</artifactId>
-			<version>2.5.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.squareup.retrofit2</groupId>
-			<artifactId>converter-scalars</artifactId>
-			<version>2.5.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.squareup.retrofit2</groupId>
-			<artifactId>converter-protobuf</artifactId>
-			<version>2.5.0</version>
-		</dependency>
-		<dependency>
-	  		<groupId>org.web3j</groupId>
-	  		<artifactId>core</artifactId>
-	  		<version>4.2.0</version>
-	  	</dependency>
-	  	<dependency>
-	  		<groupId>org.web3j</groupId>
-	  		<artifactId>utils</artifactId>
-	  		<version>4.2.0</version>
-	  	</dependency>
-	  	<dependency>
-	  		<groupId>org.web3j</groupId>
-	  		<artifactId>abi</artifactId>
-	  		<version>4.2.0</version>
-	  	</dependency>
-	</dependencies>
-
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -93,7 +24,6 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
 					<encoding>utf8</encoding>
-					<release>12</release>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -118,6 +48,9 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<source>8</source>
+				</configuration>
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
@@ -154,6 +87,38 @@
 		</plugins>
 	</build>
 
+	<repositories>
+		<repository>
+			<id>jasperreports</id>
+			<url>http://jasperreports.sourceforge.net/maven2/</url>
+		</repository>
+		<repository>
+			<id>jaspersoft</id>
+			<url>https://jaspersoft.artifactoryonline.com/jaspersoft/jr-ce-releases/</url>
+		</repository>
+		<repository>
+			<id>jcenter</id>
+			<url>http://jcenter.bintray.com/</url>
+		</repository>
+		<repository>
+			<id>vaadin-addons</id>
+			<url>http://maven.vaadin.com/vaadin-addons/</url>
+		</repository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<version.java.persistence>2.1.1</version.java.persistence>
+		<version.spring>2.2.0.RELEASE</version.spring>
+	</properties>
+
 	<distributionManagement>
 		<snapshotRepository>
 			<id>ossrh</id>
@@ -165,7 +130,8 @@
 		</repository>
 	</distributionManagement>
 
-	<url>https://github.com/trigsoft-ltd/graphenee</url>
+	<url>https://github.com/ijazfx/graphenee</url>
+	<description>Graphenee Framework</description>
 	<scm>
 		<url>https://github.com/ijazfx/graphenee.git</url>
 		<developerConnection>Farrukh Ijaz</developerConnection>
@@ -189,11 +155,41 @@
 		</developer>
 	</developers>
 
-
-	<description>Graphenee support for Blockchain for Graphenee Applications</description>
 	<parent>
-		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
+		<groupId>org.springframework.boot</groupId>
 		<version>2.2.0.RELEASE</version>
 	</parent>
+	<packaging>pom</packaging>
+	<modules>
+		<module>blockchain</module>
+		<module>core</module>
+		<module>jbpm</module>
+		<module>kitchensink</module>
+		<module>vaadin7</module>
+	</modules>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>io.graphenee</groupId>
+				<artifactId>blockchain</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.graphenee</groupId>
+				<artifactId>core</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.graphenee</groupId>
+				<artifactId>vaadin7</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.graphenee</groupId>
+				<artifactId>jbpm</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>
