@@ -71,17 +71,14 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.6.1</version>
 				<configuration>
 					<encoding>utf8</encoding>
-					<source>1.8</source>
-					<target>1.8</target>
+					<release>12</release>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>1.5.3.RELEASE</version>
 			</plugin>
 			<plugin>
 				<groupId>com.vaadin</groupId>
@@ -146,4 +143,9 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.0.RELEASE</version>
+	</parent>
 </project>

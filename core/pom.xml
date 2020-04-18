@@ -23,6 +23,7 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
 					<encoding>utf8</encoding>
+					<release>12</release>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -47,9 +48,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<configuration>
-					<source>8</source>
-				</configuration>
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
@@ -312,7 +310,7 @@
 		</repository>
 	</distributionManagement>
 
-	<url>https://github.com/ijazfx/graphenee</url>
+	<url>https://github.com/trigsoft-ltd/graphenee</url>
 	<description>Graphenee Framework for Web Application Development</description>
 	<scm>
 		<url>https://github.com/ijazfx/graphenee.git</url>
