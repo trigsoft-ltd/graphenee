@@ -65,6 +65,13 @@
 	<!-- Repositories -->
 	<repositories>
 		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
 			<id>jasperreports</id>
 			<url>http://jasperreports.sourceforge.net/maven2/</url>
 		</repository>
@@ -73,19 +80,12 @@
 			<url>https://jaspersoft.artifactoryonline.com/jaspersoft/jr-ce-releases/</url>
 		</repository>
 		<repository>
-			<id>jcenter</id>
-			<url>http://jcenter.bintray.com/</url>
-		</repository>
-		<repository>
 			<id>vaadin-addons</id>
 			<url>http://maven.vaadin.com/vaadin-addons/</url>
 		</repository>
 		<repository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
+			<id>jcenter</id>
+			<url>http://jcenter.bintray.com/</url>
 		</repository>
 	</repositories>
 
@@ -440,7 +440,9 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<configuration>
-					<source>8</source>
+					<failOnError>false</failOnError>
+					<failOnWarnings>false</failOnWarnings>
+					<source>11</source>
 				</configuration>
 				<executions>
 					<execution>
