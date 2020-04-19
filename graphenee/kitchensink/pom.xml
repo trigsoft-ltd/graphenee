@@ -4,14 +4,18 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>kitchensink</artifactId>
 	<packaging>war</packaging>
+	<name>Graphenee Kitchensink</name>
+	<description>Kitchskin project, an example and sandbox to test components.</description>
+	
+	<!-- Parent -->
+	<parent>
+		<groupId>io.graphenee</groupId>
+		<artifactId>graphenee</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
-		<failOnMissingWebXml>false</failOnMissingWebXml>
-	</properties>
-
+	<!-- Dependencies -->
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -45,7 +49,6 @@
 		<dependency>
 			<groupId>io.graphenee</groupId>
 			<artifactId>vaadin7</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -54,97 +57,11 @@
 		<dependency>
 			<groupId>io.graphenee</groupId>
 			<artifactId>core</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 		</dependency>
 	</dependencies>
-	<name>Graphenee Kitchensink</name>
-	<description>Project to test various Graphenee features and components.</description>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<encoding>utf8</encoding>
-					<release>12</release>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>com.vaadin</groupId>
-				<artifactId>vaadin-maven-plugin</artifactId>
-				<version>7.7.17</version>
-				<configuration>
-					<extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
-					<webappDirectory>${basedir}/src/main/webapp/VAADIN/widgetsets</webappDirectory>
-					<draftCompile>false</draftCompile>
-					<compileReport>false</compileReport>
-					<style>OBF</style>
-					<strict>true</strict>
-				</configuration>
-				<!-- <executions>
-					<execution>
-						<goals>
-							<goal>update-theme</goal>
-							<goal>update-widgetset</goal>
-							<goal>compile</goal>
-							<goal>compile-theme</goal>
-						</goals>
-					</execution>
-				</executions> -->
-			</plugin>
-		</plugins>
-	</build>
-
-	<repositories>
-		<repository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</repository>
-		<repository>
-			<id>vaadin-addons</id>
-			<url>http://maven.vaadin.com/vaadin-addons/</url>
-		</repository>
-		<repository>
-			<id>jasperreports</id>
-			<url>http://jasperreports.sourceforge.net/maven2/</url>
-		</repository>
-		<repository>
-			<id>jaspersoft</id>
-			<url>https://jaspersoft.artifactoryonline.com/jaspersoft/jr-ce-releases/</url>
-		</repository>
-	</repositories>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>io.graphenee</groupId>
-				<artifactId>core</artifactId>
-				<version>1.0.0-SNAPSHOT</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>io.graphenee</groupId>
-				<artifactId>vaadin7</artifactId>
-				<version>1.0.0-SNAPSHOT</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-	<parent>
-		<groupId>io.graphenee</groupId>
-		<artifactId>graphenee</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
-		<relativePath>..</relativePath>
-	</parent>
 </project>
