@@ -11,6 +11,15 @@
 	<description>Graphenee Parent Project</description>
 	<url>https://github.com/ijazfx/graphenee</url>
 
+	<!-- Modules -->
+	<modules>
+		<module>blockchain</module>
+		<module>core</module>
+		<module>jbpm</module>
+		<module>kitchensink</module>
+		<module>vaadin7</module>
+	</modules>
+
 	<!-- License -->
 	<licenses>
 		<license>
@@ -60,6 +69,8 @@
 		<version.drools>6.4.0.Final</version.drools>
 		<version.web3>4.2.0</version.web3>
 		<version.sawtooth>v0.1.2</version.sawtooth>
+		<version.jasper>6.11.0</version.jasper>
+		<version.grpc>1.23.0</version.grpc>
 	</properties>
 
 	<!-- Repositories -->
@@ -322,17 +333,38 @@
 				<artifactId>sawtooth-sdk-protos</artifactId>
 				<version>${version.sawtooth}</version>
 			</dependency>
+			<dependency>
+				<groupId>net.sf.jasperreports</groupId>
+				<artifactId>jasperreports-functions</artifactId>
+				<version>${version.jasper}</version>
+			</dependency>
+			<dependency>
+				<groupId>net.sf.jasperreports</groupId>
+				<artifactId>jasperreports</artifactId>
+				<version>${version.jasper}</version>
+			</dependency>
+			<dependency>
+				<groupId>net.sf.jasperreports</groupId>
+				<artifactId>jasperreports-functions</artifactId>
+				<version>${version.jasper}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.grpc</groupId>
+				<artifactId>grpc-netty-shaded</artifactId>
+				<version>${version.grpc}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.grpc</groupId>
+				<artifactId>grpc-protobuf</artifactId>
+				<version>${version.grpc}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.grpc</groupId>
+				<artifactId>grpc-stub</artifactId>
+				<version>${version.grpc}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
-	<!-- Modules -->
-	<modules>
-		<module>blockchain</module>
-		<module>core</module>
-		<module>jbpm</module>
-		<module>kitchensink</module>
-		<module>vaadin7</module>
-	</modules>
 
 	<!-- Developers -->
 	<developers>
