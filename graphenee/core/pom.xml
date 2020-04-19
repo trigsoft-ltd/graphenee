@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>core</artifactId>
-	<name>Graphenee</name>
+	<name>Graphenee Framework</name>
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -46,6 +46,10 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<source>8</source>
+			        <failOnError>false</failOnError>
+				</configuration>
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>

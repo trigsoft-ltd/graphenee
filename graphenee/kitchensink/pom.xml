@@ -61,7 +61,7 @@
 			<artifactId>junit</artifactId>
 		</dependency>
 	</dependencies>
-	<name>Graphenee Workshop</name>
+	<name>Graphenee Kitchensink</name>
 	<description>Project to test various Graphenee features and components.</description>
 
 	<build>

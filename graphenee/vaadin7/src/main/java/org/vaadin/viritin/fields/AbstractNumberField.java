@@ -209,25 +209,11 @@ public abstract class AbstractNumberField<T> extends CustomField<T> implements
         removeFocusListener(listener);
     }
 
-    /**
-     * Adds a BlurListener to the Component which gets fired when a Field loses keyboard focus, returning
-     * this instance in a fluent fashion.
-     *
-     * @param listener
-     * @return this instance
-     */
     public AbstractNumberField<T> withBlurListener(FieldEvents.BlurListener listener) {
         addBlurListener(listener);
         return this;
     }
 
-    /**
-     * Adds a FocusListener to the Component which gets fired when a Field receives keyboard focus, returning
-     * this instance in a fluent fashion.
-     *
-     * @param listener
-     * @return this instance
-     */
     public AbstractNumberField<T> withFocusListener(FieldEvents.FocusListener listener) {
         addFocusListener(listener);
         return this;
