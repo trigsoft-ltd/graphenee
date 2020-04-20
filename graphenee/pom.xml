@@ -335,11 +335,6 @@
 			</dependency>
 			<dependency>
 				<groupId>net.sf.jasperreports</groupId>
-				<artifactId>jasperreports-functions</artifactId>
-				<version>${version.jasper}</version>
-			</dependency>
-			<dependency>
-				<groupId>net.sf.jasperreports</groupId>
 				<artifactId>jasperreports</artifactId>
 				<version>${version.jasper}</version>
 			</dependency>
